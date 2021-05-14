@@ -1,0 +1,1185 @@
+/*
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+:root {
+    --ls-font-family: 'IBM Plex Sans', "方正屏显雅宋简体", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --ls-main-content-max-width: 950px;
+    --ls-tag-text-opacity: 0.6;
+    --ls-tag-text-hover-opacity: 0.8;
+    --ls-page-text-size: 1em;
+    --ls-page-title-size: 36px;
+}
+
+.cp__sidebar-main-layout {
+    background: none;
+}
+
+
+/***************************************************************
+***************************** TOP ******************************
+***************************************************************/
+
+.cp__header-logo,
+#head .repos {
+    opacity: .3;
+    transition: .3s;
+}
+
+#head .repos {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#head {
+    background: none;
+}
+
+
+/* import (arrows) icon */
+
+#head .ml-2.mr-1 svg {
+    height: 17px;
+}
+
+
+/* gradient on top and bottom for aesthetics */
+
+.cp__sidebar-main-content:before {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.cp__sidebar-main-content:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* < > buttons */
+
+a[title="Go Back"],
+a[title="Go Forward"] {
+    border-radius: 3px;
+    opacity: 1;
+    transition: .3s;
+}
+
+
+/* search-field */
+
+#search-wrapper {
+    opacity: 0;
+    transition: .3s;
+}
+
+#search-wrapper:hover,
+#search-wrapper:focus-within {
+    opacity: 1;
+}
+
+#search-wrapper>div:first-child {
+    left: 10px;
+}
+
+#search>.inner {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+#search_field:focus {
+    background: var(--ls-search-background-color);
+}
+
+
+/***************************************************************
+************************** MAIN AREA ***************************
+***************************************************************/
+
+
+/* blocks with background */
+
+[style="background-color: rgb(73, 125, 70); padding-left: 6px; padding-right: 6px; color: rgb(255, 255, 255);"],
+[style="background-color: rgb(83, 62, 125); padding-left: 6px; padding-right: 6px; color: rgb(255, 255, 255);"],
+[style="background-color: rgb(120, 127, 151); padding-left: 6px; padding-right: 6px; color: rgb(255, 255, 255);"],
+[style="background-color: rgb(151, 134, 38); padding-left: 6px; padding-right: 6px; color: rgb(255, 255, 255);"],
+[style="background-color: rgb(73, 118, 123); padding-left: 6px; padding-right: 6px; color: rgb(255, 255, 255);"],
+[style="background-color: rgb(121, 62, 62); padding-left: 6px; padding-right: 6px; color: rgb(255, 255, 255);"] {
+    border-radius: 3px;
+    padding: 5px 6px;
+}
+
+/* vertical lines */
+
+.block-children {
+    border-left: 1px solid var(--ls-guideline-color);
+}
+
+
+/* weird vertical border on the left side of the screen */
+
+#sidebar-nav-wrapper {
+    border: none !important;
+}
+
+
+/* text mark/highlight */
+
+mark {
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+
+/* page title */
+
+h1.title {
+    font-weight: 900;
+}
+
+
+/* page reference */
+
+.page-reference {
+    border-radius: 3px;
+    padding: 2px 0px;
+    transition: .3s;
+}
+
+.page-reference .text-gray-500 {
+    opacity: .5;
+}
+
+
+/* block references */
+
+.block-ref {
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-style: italic;
+}
+
+.block-ref .block-ref {
+    padding: 6px 5px;
+    border: none;
+}
+
+
+/* checkbox */
+
+.form-checkbox {
+    border-radius: 2px;
+    z-index: 1;
+    position: relative;
+}
+
+.marker-switch {
+    border: none;
+    opacity: 1;
+    padding: 0;
+    height: 20px;
+    font-weight: 700;
+    margin: 0 5px 0 2px;
+    line-height: 20px;
+    transition: .3s;
+}
+
+.marker-switch {
+    margin-left: -23px;
+    padding-left: 24px;
+    padding-right: 14px;
+}
+
+
+/* inline code */
+
+:not(pre)>code {
+    border-radius: 3px;
+    font-size: .9em;
+    font-family: MonoLisa, "Fira Code", Monaco, Menlo, Consolas, "COURIER NEW", monospace;
+    padding: 3px 5px !important;
+    /* color: #ad1a72;*/
+}
+
+
+/***************************************************************
+************************ RIGHT SIDEBAR *************************
+***************************************************************/
+
+.cp__sidebar-layout.is-right-sidebar-open .cp__sidebar-main-layout {
+    margin-right: 30%;
+}
+
+.cp__right-sidebar.is-open {
+    width: 30%;
+}
+
+.cp__right-sidebar .sidebar-item {
+    padding: 10px 20px 10px 2px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+
+/***************************************************************
+**************************** MISC ******************************
+***************************************************************/
+
+a {
+    transition: .3s;
+}
+
+/***************************************************************
+****************************************************************
+****************************************************************
+************************ DARK - COFFEE *************************
+****************************************************************
+****************************************************************
+***************************************************************/
+
+.dark-theme,
+html[data-theme=dark] {
+    --ls-primary-background-color: #211c1b;
+    --ls-secondary-background-color: #27211f;
+    --ls-tertiary-background-color: #2b2524;
+    --ls-quaternary-background-color: #362f2e;
+    --ls-table-tr-even-background-color: #362f2e;
+    --ls-active-primary-color: #c28eaa;
+    --ls-active-secondary-color: #e8d0dc;
+    --ls-block-properties-background-color: var(--ls-secondary-background-color);
+    --ls-block-ref-link-text-color: #b9543b;
+    --ls-search-background-color: var(--ls-primary-background-color);
+    --ls-border-color: #473134;
+    --ls-guideline-color: #2f2928;
+    --ls-menu-hover-color: var(--ls-secondary-background-color);
+    --ls-primary-text-color: #9e836d;
+    --ls-secondary-text-color: #dbd7d5;
+    --ls-title-text-color: #9e836d;
+    --ls-link-text-color: #dd745b;
+    --ls-link-text-hover-color: #eb8e77;
+    --ls-link-ref-text-color: #79b990;
+    --ls-link-ref-text-hover-color: #93cea9;
+    --ls-tag-text-color: var(--ls-link-text-color);
+    --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
+    --ls-slide-background-color: var(--ls-primary-background-color);
+    --ls-block-bullet-border-color: #61554d;
+    --ls-block-bullet-color: #423834;
+    --ls-block-highlight-color: #064645;
+    --ls-selection-background-color: #AB3641;
+    --ls-page-checkbox-color: #935c62;
+    --ls-page-checkbox-border-color: var(--ls-primary-background-color);
+    --ls-page-blockquote-color: var(--ls-primary-text-color);
+    --ls-page-blockquote-bg-color: #1d1614;
+    --ls-page-blockquote-border-color: #3c2629;
+    
+    /*--ls-page-inline-code-color: var(--ls-primary-text-color);*/
+    --ls-page-inline-code-color: #f32d0c;
+    --ls-page-inline-code-bg-color: #1b1715;
+    
+    --ls-scrollbar-foreground-color: rgba(255, 255, 255, 0.05);
+    --ls-scrollbar-background-color: rgba(67, 30, 41, 0.9);
+    --ls-scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.2);
+    --ls-head-text-color: #9e836d;
+    --ls-icon-color: var(--ls-quaternary-background-color);
+    --ls-search-icon-color: var(--ls-quaternary-background-color);
+    --ls-a-chosen-bg: var(--ls-secondary-background-color);
+    --ls-right-sidebar-code-bg-color: #3c041f;
+    --color-level-1: var(--ls-secondary-background-color);
+    --color-level-2: var(--ls-tertiary-background-color);
+    --color-level-3: var(--ls-quaternary-background-color);
+    --color-level-4: #632f46;
+    --color-level-5: #865673;
+    --color-level-6: #9e6889;
+}
+
+
+/***************************************************************
+***************************** TOP ******************************
+***************************************************************/
+
+
+/* gradient on top for aesthetics */
+
+.dark-theme .cp__sidebar-main-content:before {
+    background: linear-gradient(to bottom, rgba(33, 28, 27, .7) 0%, rgba(33, 28, 27, 0) 100%);
+}
+
+.dark-theme .cp__sidebar-main-content:after {
+    background: linear-gradient(to top, rgba(33, 28, 27, .7) 0%, rgba(33, 28, 27, 0) 100%);
+}
+
+
+/* < > buttons */
+
+.dark-theme a[title="Go Back"],
+.dark-theme a[title="Go Forward"] {
+    background: var(--ls-primary-background-color);
+}
+
+.dark-theme a[title="Go Back"]:hover,
+.dark-theme a[title="Go Forward"]:hover {
+    background: var(--ls-secondary-background-color);
+}
+
+
+/* search-field */
+
+.dark-theme #search_field {
+    background: linear-gradient(to right, rgba(39, 33, 33, 1) 0%, rgba(39, 33, 33, .7) 200px, rgba(39, 33, 33, 0) 100%);
+    transition: background .3s;
+}
+
+.dark-theme #search_field:focus {
+    box-shadow: 0px 0px 20px 0px rgba(27, 22, 22, 0.8);
+}
+
+
+/***************************************************************
+************************** MAIN AREA ***************************
+***************************************************************/
+
+
+/* title menu ... */
+
+.dark-theme [title="More options"] svg {
+    color: #ab6341;
+}
+
+
+/* text mark/highlight */
+
+.dark-theme mark {
+    background: #196755;
+    color: #e0d3c9;
+}
+
+
+/* bold and italics */
+
+.dark-theme b,
+.dark-theme strong,
+.dark-theme i {
+    color: #baa695;
+}
+
+.white-theme b,
+.white-theme strong,
+.white-theme i {
+    color: #689c30;
+}
+
+/* page reference */
+
+.dark-theme .page-reference:hover {
+    background: var(--ls-tertiary-background-color);
+}
+
+.dark-theme .references-blocks .page-reference:hover {
+    background: var(--ls-tertiary-background-color);
+}
+
+.dark-theme .page-reference .text-gray-500 {
+    /* page brackets */
+    opacity: .5;
+}
+
+
+/* block reference */
+
+.dark-theme .block-ref {
+    background: rgba(121, 94, 110, .5);
+    color: #e0d8cb;
+    border-bottom-color: rgba(121, 85, 106, .5);
+}
+
+
+/* selected block or higlighted page link */
+
+.dark-theme .ls-block.selected .page-reference:hover,
+.dark-theme mark .page-reference:hover {
+    background: #145042;
+}
+
+.dark-theme .ls-block.selected .page-ref,
+.dark-theme mark .page-ref {
+    color: #fff;
+}
+
+.dark-theme .ls-block.selected .page-ref:hover,
+.dark-theme mark .page-ref:hover {
+    color: #f7f7e8;
+}
+
+
+/* checkbox */
+
+.dark-theme .marker-switch {
+    color: #000;
+    background: #52373a;
+}
+
+.dark-theme .marker-switch:hover {
+    background: #5d3e41;
+}
+
+
+/***************************************************************
+************************ RIGHT SIDEBAR *************************
+***************************************************************/
+
+.dark-theme .cp__right-sidebar.is-open {
+    background: rgba(97, 67, 55, .05);
+}
+
+.dark-theme .cp__right-sidebar .sidebar-item .close svg {
+    color: #776857;
+}
+
+
+/***************************************************************
+**************************** MISC ******************************
+***************************************************************/
+
+
+/* dotted bg */
+
+.dark-theme #app-container {
+    background-image: radial-gradient(#423019 5%, #211c1b 5%);
+    background-position: 0 0;
+    background-size: 25px 25px;
+}
+
+.dark-theme textarea {
+    caret-color: #a79486;
+}
+
+.dark-theme ::selection {
+    background: #69b6a7;
+    color: #c4b2a6;
+}
+
+
+/* settings switcher */
+
+.dark-theme .bg-indigo-600 {
+    background: #dd745b;
+}
+
+.dark-theme .bg-indigo-600:hover {
+    background: #eb8e77;
+}
+
+/********************************/
+/***************************************************************
+****************************************************************
+****************************************************************
+************************ LIGHT - WHITE *************************
+****************************************************************
+****************************************************************
+***************************************************************/
+
+.white-theme,
+html[data-theme=light] {
+    --ls-search-background-color: #fff;
+    --ls-secondary-background-color: #f7f6f4;
+    --ls-tertiary-background-color: #f1eee8;
+    --ls-quaternary-background-color: #e8e5de;
+    --ls-block-properties-background-color: #f7f6f4;
+    --ls-block-bullet-border-color: #dedede;
+    --ls-block-bullet-color: rgba(67, 63, 56, 0.25);
+    --ls-guideline-color: rgba(46, 27, 5, 0.08);
+    --ls-primary-text-color: #433F38;
+    --ls-title-text-color: var(--ls-primary-text-color);
+    --ls-link-text-color: #c95f68;
+    --ls-link-text-hover-color: #ac434c;
+    --ls-link-ref-text-color: #e49db1;
+    --ls-link-ref-text-hover-color: #5d9cd6;
+    --ls-tag-text-color: var(--ls-link-ref-text-color);
+    --ls-tag-text-hover-color: var(--ls-link-ref-text-hover-color);
+    --ls-icon-color: #c1bdb7;
+    
+    /*--ls-page-inline-code-bg-color: #f7f6f4;*/
+    --ls-page-inline-code-background: #ededeb;
+    --ls-page-inline-code-color: #ad1a72;
+
+    --ls-page-blockquote-bg-color: #fbfaf8;
+    --ls-page-blockquote-border-color: #799bbc;
+    --ls-page-checkbox-color: #9dbbd8;
+    --ls-page-checkbox-border-color: var(--ls-page-checkbox-color);
+    --color-level-1: var(--ls-secondary-background-color);
+    --color-level-2: var(--ls-tertiary-background-color);
+}
+
+html[data-theme=light] .cp__right-sidebar .block-content {
+    --ls-page-inline-code-bg-color: var(--ls-page-inline-code-bg-color);
+}
+
+
+/***************************************************************
+***************************** TOP ******************************
+***************************************************************/
+
+
+/* gradient on top and bottom for aesthetics */
+
+.white-theme .cp__sidebar-main-content:before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.white-theme .cp__sidebar-main-content:after {
+    background: linear-gradient(to top, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+/* < > buttons */
+
+.white-theme a[title="Go Back"],
+.white-theme a[title="Go Forward"] {
+    background: rgba(255, 255, 255, 1);
+}
+
+.white-theme a[title="Go Back"]:hover,
+.white-theme a[title="Go Forward"]:hover {
+    background: #f7f6f4;
+}
+
+
+/* search-field */
+
+.white-theme #search_field {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, .7) 200px, rgba(255, 255, 255, 0) 100%);
+    transition: background .3s;
+}
+
+.white-theme #search_field:focus {
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .8);
+}
+
+
+/***************************************************************
+************************** MAIN AREA ***************************
+***************************************************************/
+
+
+/* title menu ... */
+
+.white-theme [title="More options"] svg {
+    color: #7b7b7b;
+}
+
+
+/* page reference */
+
+.white-theme .page-reference {
+    padding: 2px 0px;
+    transition: .3s;
+}
+
+.white-theme .page-reference:hover {
+    background: #f6f5f3;
+    border-radius: 3px;
+}
+
+/* bracket opacity and color */
+.white-theme .page-reference .text-gray-500 {
+    opacity: 1;
+    color: #e6e4df;
+}
+
+
+/* block reference */
+
+.white-theme .block-ref {
+    background: rgba(40, 142, 111, 0.1);
+    color: var(--ls-primary-text-color);
+    border-bottom-color: rgba(40, 142, 111, .3);
+}
+
+.white-theme .block-ref a {
+    color: var(--ls-primary-text-color);
+}
+
+
+/* checkbox */
+
+.white-theme .form-checkbox {
+    background-color: var(--ls-page-checkbox-color);
+}
+
+.white-theme .marker-switch {
+    color: #504d47;
+    background: #f3f2ed;
+}
+
+.white-theme .marker-switch:hover {
+    background: #eae8e0;
+}
+
+
+/***************************************************************
+************************ RIGHT SIDEBAR *************************
+***************************************************************/
+
+.white-theme .cp__right-sidebar.is-open {
+    background: rgba(128, 122, 92, 0.05);
+}
+
+
+/*==================================================*/
+/* === tags ====*/
+/*==================================================*/
+a.tag {
+    opacity: 1;
+    color: var(--tagpills-text);
+    background-color: var(--tagpills-bg);
+    border: 1px solid var(--tagpills-border);
+    font-size: 1em;
+    padding: 0px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: var(--tagpills-border-radius);
+}
+.tag:hover {
+    color: white !important;
+    background-color: var(--accent-bgcolor);
+}
+
+/* self defined tags */
+a.tag[href*="video"] {
+    background: #ffc82a !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="video"]:hover {
+    background: #ffc82a !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="baby"] {
+    background: #ff2ad8 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="baby"]:hover {
+    background: #ff2ad8 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="tutorial"] {
+    background: #02C874 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="tutorial"]:hover {
+    background: #02C874 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="iOS"] {
+    background: #477ba8 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="iOS"]:hover {
+    background: #477ba8 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="paper"] {
+    background: #477ba8 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="paper"]:hover {
+    background: #477ba8 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="quote"] {
+    background: #02C874 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="quote"]:hover {
+    background: #02C874 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="Algorithm"] {
+    background: #8fd3f4 !important;
+    color: #fff !important;
+    padding: 3px 3px;
+    line-height: 1.2em;
+    font-weight: 700;
+}
+a.tag[href*="Algorithm"]:hover {
+    background: #8fd3f4 !important;
+    color: #27352b !important;
+    padding: 3px 3px;
+    line-height: 1.2em;
+    font-weight: 700;
+}
+
+a.tag[href*="elearning"] {
+    background: #a18cd1 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="elearning"]:hover {
+    background: #a18cd1 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="programming"] {
+    background: #8fd3f4 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="programming"]:hover {
+    background: #8fd3f4 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="English"] {
+    background: #a18cd1 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="English"]:hover {
+    background: #a18cd1 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+a.tag[href*="skill"] {
+    background: #8fd3f4 !important;
+    color: #fff !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+a.tag[href*="skill"]:hover {
+    background: #8fd3f4 !important;
+    color: #27352b !important;
+    padding: 2px 2px;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+/*==================================================*/
+/* == codemirror code blocks == */
+/*==================================================*/
+/*
+    Name:       dracula for CodeMirror
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+    Adapted:    Sly Bouhafs
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+    Adapted for logseq
+*/
+
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like {
+    font-family:  "Fire Code", monospace; /*"Ubuntu Mono",*/
+    font-weight: 400;
+  }
+  
+  .CodeMirror {
+  /*  font-family: "FiraCode Nerd Font", "Fire Code", monospace; */
+    line-height: 1.2;
+    background: var(--background);
+  }
+  
+  .cm-s-default.CodeMirror,
+  .cm-s-default .CodeMirror-gutters {
+    background-color: transparent;
+    color: var(--white) !important;
+    border: none;
+  }
+  
+  .extensions__code-lang {
+    background: var(--light-background);
+  }
+  
+  .cm-s-default.CodeMirror {
+    border: 5px solid var(--light-background);
+  }
+  
+  .cm-s-default .CodeMirror-gutters {
+    color: var(--background);
+  }
+  .cm-s-default .CodeMirror-cursor {
+    border-left: solid thin var(--white);
+  }
+  .cm-s-default .CodeMirror-linenumber {
+    color: var(--comment);
+  }
+  .cm-s-default .CodeMirror-selected {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .cm-s-default .CodeMirror-line {
+    box-shadow: none;
+  }
+  
+  .cm-s-default .CodeMirror-line::selection,
+  .cm-s-default .CodeMirror-line > span::selection,
+  .cm-s-default .CodeMirror-line > span > span::selection {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .cm-s-default .CodeMirror-line::-moz-selection,
+  .cm-s-default .CodeMirror-line > span::-moz-selection,
+  .cm-s-default .CodeMirror-line > span > span::-moz-selection {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .cm-s-default span.cm-comment {
+    color: var(--comment);
+  }
+  .cm-s-default span.cm-string,
+  .cm-s-default span.cm-string-2 {
+    color: var(--yellow);
+  }
+  .cm-s-default span.cm-number {
+    color: var(--purle);
+  }
+  .cm-s-default span.cm-variable {
+    color: var(--green);
+  }
+  .cm-s-default span.cm-variable-2 {
+    color: var(--white);
+  }
+  .cm-s-default span.cm-def {
+    color: var(--green);
+  }
+  .cm-s-default span.cm-operator {
+    color: var(--pink);
+  }
+  .cm-s-default span.cm-keyword {
+    color: var(--pink);
+  }
+  .cm-s-default span.cm-atom {
+    color: var(--purple);
+  }
+  .cm-s-default span.cm-meta {
+    color: var(--white);
+  }
+  .cm-s-default span.cm-tag {
+    color: var(--pink);
+  }
+  .cm-s-default span.cm-attribute {
+    color: var(--green);
+  }
+  .cm-s-default span.cm-qualifier {
+    color: var(--green);
+  }
+  .cm-s-default span.cm-property {
+    color: var(--cyan);
+  }
+  .cm-s-default span.cm-builtin {
+    color: var(--green);
+  }
+  .cm-s-default span.cm-variable-3,
+  .cm-s-default span.cm-type {
+    color: var(--pink);
+  }
+  
+  .cm-s-default .CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .cm-s-default .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: var(--white) !important;
+  }
+  
+  #right-sidebar pre.CodeMirror-line {
+    background: transparent;
+  }
+  
+/*
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like {
+  font-family:  "Fire Code", monospace;
+  font-weight: 400;
+}
+
+.CodeMirror {
+  line-height: 1.2;
+  background: var(--background);
+}
+
+.cm-s-default.CodeMirror,
+.cm-s-default .CodeMirror-gutters {
+  background-color: transparent;
+  color: var(--white) !important;
+  border: none;
+}
+
+.extensions__code-lang {
+  background: var(--light-background);
+}
+
+.cm-s-default.CodeMirror {
+  border: 5px solid var(--light-background);
+}
+
+.cm-s-default .CodeMirror-gutters {
+  color: var(--background);
+}
+.cm-s-default .CodeMirror-cursor {
+  border-left: solid thin var(--white);
+}
+.cm-s-default .CodeMirror-linenumber {
+  color: var(--comment);
+}
+.cm-s-default .CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-default .CodeMirror-line {
+  box-shadow: none;
+}
+
+.cm-s-default .CodeMirror-line::selection,
+.cm-s-default .CodeMirror-line > span::selection,
+.cm-s-default .CodeMirror-line > span > span::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cm-s-default .CodeMirror-line::-moz-selection,
+.cm-s-default .CodeMirror-line > span::-moz-selection,
+.cm-s-default .CodeMirror-line > span > span::-moz-selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cm-s-default span.cm-comment {
+  color: var(--comment);
+}
+.cm-s-default span.cm-string,
+.cm-s-default span.cm-string-2 {
+  color: var(--yellow);
+}
+.cm-s-default span.cm-number {
+  color: var(--purle);
+}
+.cm-s-default span.cm-variable {
+  color: var(--green);
+}
+.cm-s-default span.cm-variable-2 {
+  color: var(--white);
+}
+.cm-s-default span.cm-def {
+  color: var(--green);
+}
+.cm-s-default span.cm-operator {
+  color: var(--pink);
+}
+.cm-s-default span.cm-keyword {
+  color: var(--pink);
+}
+.cm-s-default span.cm-atom {
+  color: var(--purple);
+}
+.cm-s-default span.cm-meta {
+  color: var(--white);
+}
+.cm-s-default span.cm-tag {
+  color: var(--pink);
+}
+.cm-s-default span.cm-attribute {
+  color: var(--green);
+}
+.cm-s-default span.cm-qualifier {
+  color: var(--green);
+}
+.cm-s-default span.cm-property {
+  color: var(--cyan);
+}
+.cm-s-default span.cm-builtin {
+  color: var(--green);
+}
+.cm-s-default span.cm-variable-3,
+.cm-s-default span.cm-type {
+  color: var(--pink);
+}
+
+.cm-s-default .CodeMirror-activeline-background {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cm-s-default .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: var(--white) !important;
+}
+
+#right-sidebar pre.CodeMirror-line {
+  background: transparent;
+}
+*/
+
+/***************************************************************
+**************************** MISC ******************************
+***************************************************************/
+
+
+/* dotted bg */
+
+.white-theme #app-container {
+    background-image: radial-gradient(#e0e0e0 5%, #fff 5%);
+    background-position: 0 0;
+    background-size: 25px 25px;
+}
+
+.white-theme textarea {
+    caret-color: #0075E1;
+}
+
+/***************************************************************
+**************************** Calendar **************************
+***************************************************************/
+.cp__sidebar-main-content .logseq-tools-multiple-calendars {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.cp__sidebar-main-content .logseq-tools-multiple-calendars .logseq-tools-calendar {
+    flex: 0 50%;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.logseq-tools-calendar tr {
+    background: none !important;
+}
+
+.logseq-tools-calendar th,
+.logseq-tools-calendar td,
+.logseq-tools-calendar tr {
+    border: none;
+}
+
+.logseq-tools-calendar th,
+.logseq-tools-calendar td {
+    text-align: center;
+}
+
+
+/* Calendar - pages from other months */
+
+.logseq-tools-calendar .outofmonth {
+    opacity: .3;
+}
+
+/***************************************************************
+**************************** Sticky **************************
+***************************************************************/
+.sticky {
+  margin-top: 50px;
+  position: relative;
+}
+
+.sticky > :last-child {
+	color: #333;
+	position: relative;
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	box-shadow: 0 12px 10px -7px rgb(0 0 0 / 20%);
+	background: #eae672;
+	transform: rotate(2deg);
+}
+
+.sticky > :first-clild {
+	background-color: #aaa;
+	display: block;
+	height: 32px;
+	width: 2px;
+	position: absolute;
+	left: 50%;
+	top: -16px;
+	z-index: 1;
+	padding: 0;
+}
+
+.sticky > :first-child:after {
+	background-color: #a31;
+	background-image: radial-gradient(25% 25%, circle, hsla(0,0%,100%,.3), hsla(0,0%,0%,.3));
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.1),
+				inset 3px 3px 3px hsla(0,0%,100%,.2),
+				inset -3px -3px 3px hsla(0,0%,0%,.2),
+				23px 20px 3px hsla(0,0%,0%,.15);
+	content: '';
+	height: 12px;
+	left: -5px;
+	position: absolute;
+	top: -10px;
+	width: 12px;
+}
+
+.sticky > :first-child:before {
+	background-color: hsla(0,0%,0%,0.1);
+	box-shadow: 0 0 .25em hsla(0,0%,0%,.1);
+	content: '';
+	height: 24px;
+	width: 2px;
+	left: 0;
+	position: absolute;
+	top: 8px;
+	transform: rotate(57.5deg);
+	transform-origin: 50% 100%;
+}
