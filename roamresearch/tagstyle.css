@@ -1,3 +1,362 @@
+:root {
+  --article-width: 716px;
+
+  --header-font: "Source Sans Pro", "Inter", sans-serif;
+  --body-font: "Source Sans Pro", "Inter", sans-serif;
+
+  --bg-color: #eeeeee;
+  --page-color: rgba(255, 255, 255, 0.95);
+
+  --text-color: #000000;
+  --icon-color: #5c7080; /* #5c7080 */
+  --bullet-color: rgba(0, 0, 0, 0.2);
+
+  --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.05);
+
+  --color-primary: 73, 197, 91;
+  --color-primary-contrast: #ffffff;
+  --color-secondary: 147, 100, 235;
+  /*--color-secondary: 255, 165, 0;*/
+  --color-secondary-contrast: #ffffff;
+}
+
+/****************** custom tag style ********************/
+/*
+.rm-page-ref-tag {
+border-radius: 8px;
+padding: .5px 3.5px .5px 3.5px;
+}
+.rm-page-ref-tag:hover {
+color: #202b33 !important;
+background-color: #b3d7ff;
+text-decoration: none;
+}*/
+
+span.rm-page-ref[data-tag="Tweet"] {
+  background: #289cef !important;
+  color: white !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Skill"] {
+  background: #ffc82a !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Finance"] {
+  background: #244d7f !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="YouTube"] {
+  background: #ff1901 !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Tutorial"] {
+  background: #02C874 !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Task"] {
+  background: #4F9D9D !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Fitness"] {
+  background: #FFD306 !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Shopping"] {
+  background: #748B42 !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Highpriority"] {
+  background: #d53123 !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Algorithm"] {
+  background: #9dc6fd !important;
+  color:white !important;
+  padding:2px 2px;
+  border-radius: 5px;
+  line-height:1.5em;
+  font-weight:500;
+}
+
+span.rm-page-ref[data-tag="Notes"] {
+  background: #9769FF !important;
+  color: white !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;  
+  font-weight: 500;
+    
+}
+
+span.rm-page-ref[data-tag="Ideas"] {
+  background: #FCB815 !important;
+  color:white !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+span.rm-page-ref[data-tag="Garden Notes"] {
+  background: #9DBC13 !important;
+  color:white !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+span.rm-page-ref[data-tag="Essay"] {
+  background: #ADCB2A !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Livestream"] {
+  background: #B979CF !important;
+  color:white !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Talk"] {
+  background: #7172FC !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Waiting"] {
+  background: #F9C866 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Work"] {
+  background: #7172FC !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Research"] {
+  background: #FF9D66 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Learning"] {
+  background:#FC766F !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Read"] {
+  background: #ADCB2A !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="SOP"] {
+  background: #9769FF !important;
+  color: white !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+span.rm-page-ref[data-tag="Life"] {
+  background: #0DBAC6 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Thoughts"] {
+  background: #e0a4d4 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Invest"] {
+  background: #f76e02 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Paper"] {
+  background: #22BB9C !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Industry"] {
+  background: #F6A945 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="ADAS"] {
+  background: #02206D !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="TODO"] {
+  background: #F92A82 !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="QUOTE"] {
+  background: #c4c77c !important;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="sr"] {
+  background: #0059B1;
+  color: #fff !important;
+  padding: 3px 3px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="SideProject"] {
+  background: #009688;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Develop"] {
+  background: #03A9F4;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Cryptocurrency"] {
+  background: #f7931a;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Project"] {
+  background: #d7cf9f;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+span.rm-page-ref[data-tag="Baby"] {
+  background: #fda2b1;
+  color: #fff !important;
+  padding: 2px 2px;
+  border-radius: 5px;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
 span.rm-page-ref[data-tag="W22Y2021"] {
   background: #a4c793 !important;
   color: white !important;
