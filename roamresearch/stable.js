@@ -406,7 +406,7 @@ exports.removeCustomStyle = removeCustomStyle;
 const setCustomStyle = () => {
   removeCustomStyle(); // Query new style
 
-  const styleQuery = window.roamAlphaAPI.q(`[:find (pull ?style [:block/string]) :where [?roamsr :node/title "roam\/sr"] [?roamsr :block/children ?css] [?css :block/refs ?roamcss] [?roamcss :node/title "roam\/css"] [?css :block/children ?style]]`); // this is necessary because having three ` breaks Roam-code-blocks
+  const styleQuery = window.roamAlphaAPI.q(`[:find (pull ?style [:block/string]) :where [?roamsr :node/title "roam\/card"] [?roamsr :block/children ?css] [?css :block/refs ?roamcss] [?roamcss :node/title "roam\/css"] [?css :block/children ?style]]`); // this is necessary because having three ` breaks Roam-code-blocks
   // other solutions have lead to the minifier appending three `
 
   const replaceStrPartial = "``";
@@ -660,8 +660,8 @@ const getAlgorithm = (res, settings) => {
 
 const isReviewBlock = block => // is a child-block
 block._children && // first parent has refs
-block._children[0].refs ? // refs of parent include "roam/sr/review" = parent is a review-parent-block
-block._children[0].refs.map(ref2 => ref2.title).includes("roam/sr/review") : false; // first ref is always a r/x-page where x is the repetition count / signal value
+block._children[0].refs ? // refs of parent include "roam/card/review" = parent is a review-parent-block
+block._children[0].refs.map(ref2 => ref2.title).includes("roam/card/review") : false; // first ref is always a r/x-page where x is the repetition count / signal value
 // r/x -> x is done via the slice
 
 
@@ -678,7 +678,7 @@ const reviewBlockToHistoryUnit = block => {
 
 const extractHistoryFromQueryResult = result => {
   // having history means that the card-block is ref'ed by at least one review block
-  // that can be found nested under the "roam/sr/review"-block / review-parent-block on the respective daily-page
+  // that can be found nested under the "roam/card/review"-block / review-parent-block on the respective daily-page
   if (result._refs) {
     return result._refs.filter(isReviewBlock).map(reviewBlockToHistoryUnit).sort((a, b) => a.date - b.date);
   } else return [];
@@ -754,7 +754,7 @@ const getTodayQuery = (settings, todayUid) => `[
 	  ${srPageTagsToClause(settings.mainTags)}
       [?card :block/refs ?srPage] 
       [?review :block/refs ?card] 
-      [?reviewPage :node/title "roam/sr/review"] 
+      [?reviewPage :node/title "roam/card/review"] 
       [?reviewParent :block/refs ?reviewPage] 
       [?reviewParent :block/children ?review] 
       [?todayPage :block/uid "${todayUid}"] 
@@ -1208,9 +1208,9 @@ const scheduleCardIn = async (card, interval) => {
       title: nextRoamDate.title
     }
   });
-  await (0, _helperFunctions.sleep)(); // Query for the [[roam/sr/review]] block
+  await (0, _helperFunctions.sleep)(); // Query for the [[roam/card/review]] block
 
-  var queryReviewBlock = window.roamAlphaAPI.q('[:find (pull ?reviewBlock [:block/uid]) :in $ ?dailyNoteUID :where [?reviewBlock :block/refs ?reviewPage] [?reviewPage :node/title "roam/sr/review"] [?dailyNote :block/children ?reviewBlock] [?dailyNote :block/uid ?dailyNoteUID]]', nextRoamDate.uid); // Check if it's there; if not, create it
+  var queryReviewBlock = window.roamAlphaAPI.q('[:find (pull ?reviewBlock [:block/uid]) :in $ ?dailyNoteUID :where [?reviewBlock :block/refs ?reviewPage] [?reviewPage :node/title "roam/card/review"] [?dailyNote :block/children ?reviewBlock] [?dailyNote :block/uid ?dailyNoteUID]]', nextRoamDate.uid); // Check if it's there; if not, create it
 
   var topLevelUid;
 
@@ -1222,7 +1222,7 @@ const scheduleCardIn = async (card, interval) => {
         order: 0
       },
       block: {
-        string: "[[roam/sr/review]]",
+        string: "[[roam/card/review]]",
         uid: topLevelUid
       }
     });
@@ -1707,7 +1707,7 @@ const init = () => {
     state: {},
     settings: {}
   };
-  console.log("🗃️ Loading roam/sr " + VERSION + ".");
+  console.log("🗃️ Loading roam/card " + VERSION + ".");
   (0, _state.standbyState)();
   document.addEventListener("click", _srButton.buttonClickHandler, false);
   (0, _sessions.loadSettings)();
@@ -1716,7 +1716,7 @@ const init = () => {
     (0, _uiElements.addDelimiter)();
     (0, _uiElements.addWidget)();
   });
-  console.log("🗃️ Successfully loaded roam/sr " + VERSION + ".");
+  console.log("🗃️ Successfully loaded roam/card " + VERSION + ".");
 };
 
 exports.init = init;
